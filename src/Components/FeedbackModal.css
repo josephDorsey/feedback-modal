@@ -1,0 +1,15 @@
+.feedback-modal {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.feedback-modal__options-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.feedback-modal__button-box {
+  border: 1px solid black;
+  padding: 1rem 0.5rem 0 0.5rem;
+}
