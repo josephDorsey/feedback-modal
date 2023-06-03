@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import { useState } from "react";
+import { FeedbackModal } from "./Components/FeedbackModal";
+import "./App.css";
 
 function App() {
+  const [openFBModal, setOpenFBModal] = useState(false);
+  function handleFBClick() {
+    if (openFBModal) {
+      setOpenFBModal(false);
+    } else {
+      setOpenFBModal(true);
+    }
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={handleFBClick}>Feedback</button>
+      {openFBModal ? <FeedbackModal /> : ""}
     </div>
   );
 }
