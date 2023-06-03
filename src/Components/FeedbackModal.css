@@ -1,6 +1,7 @@
 .feedback-modal {
   border: 1px solid black;
   border-radius: 5px;
+  width: 400px;
 }
 
 .feedback-modal__options-container {
@@ -12,4 +13,29 @@
 .feedback-modal__button-box {
   border: 1px solid black;
   padding: 1rem 0.5rem 0 0.5rem;
+}
+
+/* Buttons */
+.ionicon {
+  width: 1.5rem;
+}
+.ionicon--smaller {
+  width: 1rem;
+}
+.back-button {
+  width: 1.5rem;
+  display: flex;
+  /* margin-right: auto; */
+}
+
+/* Bug */
+.bug-nav-modal__title {
+  display: flex;
+  /* margin-right: auto; */
+  /* justify-content: center; */
+}
+.bug-nav-modal {
+  display: flex;
+  /* justify-content: space-around; */
+  justify-content: center;
 }

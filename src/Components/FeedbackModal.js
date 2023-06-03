@@ -1,4 +1,6 @@
 import { useState } from "react";
+import backButton from "../assets/arrow-back.svg";
+import bugIcon from "../assets/bug.svg";
 import "./FeedbackModal.css";
 export const FeedbackModal = () => {
   const [bug, setBug] = useState(false);
@@ -17,10 +19,15 @@ export const FeedbackModal = () => {
       />
     );
   }
-  // if (bug) {
-  //   modalView = <Bug />;
-  // }
-  return <div className="feedback-modal">{modalView}</div>;
+  if (bug) {
+    modalView = <Bug setBug={setBug} setMainScreen={setMainScreen} />;
+  }
+  return (
+    <div className="feedback-modal">
+      {modalView}
+      {/* <Bug setBug={setBug} setMainScreen={setMainScreen} /> */}
+    </div>
+  );
 };
 
 function FeedbackModalMainPage(props) {
@@ -72,5 +79,43 @@ function FeedbackModalMainPage(props) {
         </button>
       </div>
     </>
+  );
+}
+function Bug(props) {
+  const handleSubmit = () => {
+    console.log(`Clicked`);
+  };
+  const handleReturnMainScreen = () => {
+    props.setBug(false);
+    props.setMainScreen(true);
+  };
+  return (
+    <form onSubmit={handleSubmit}>
+      <div className="bug-nav-modal">
+        <img
+          src={backButton}
+          onClick={handleReturnMainScreen}
+          className="back-button"
+          alt=""
+        />
+        <div className="bug-nav-modal__title">
+          <img src={bugIcon} className="ionicon--smaller" alt="" />
+          <h3>Report an issue</h3>
+        </div>
+      </div>
+      <textarea />
+      <div>
+        <label>Severity: </label>
+        <select>
+          <option>Low</option>
+          <option>Medium</option>
+          <option>High</option>
+        </select>
+      </div>
+      <div>
+        <label>Assigned to: </label>
+        <input />
+      </div>
+    </form>
   );
 }
