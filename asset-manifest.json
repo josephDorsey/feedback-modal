@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-feedback-modal/static/css/main.073c9b0a.css",
+    "main.js": "/react-feedback-modal/static/js/main.e84dddcf.js",
+    "static/js/787.ed5dd030.chunk.js": "/react-feedback-modal/static/js/787.ed5dd030.chunk.js",
+    "static/media/logo.svg": "/react-feedback-modal/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/react-feedback-modal/index.html",
+    "main.073c9b0a.css.map": "/react-feedback-modal/static/css/main.073c9b0a.css.map",
+    "main.e84dddcf.js.map": "/react-feedback-modal/static/js/main.e84dddcf.js.map",
+    "787.ed5dd030.chunk.js.map": "/react-feedback-modal/static/js/787.ed5dd030.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.e84dddcf.js"
+  ]
+}
