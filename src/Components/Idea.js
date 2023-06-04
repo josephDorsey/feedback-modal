@@ -69,6 +69,7 @@ export function Idea(props) {
         onChange={handleTextChange}
         className="idea-text"
         placeholder="I think that..."
+        required
       />
       <div className="assigned-to-container">
         <label>Assigned to: </label>

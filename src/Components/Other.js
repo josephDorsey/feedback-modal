@@ -69,6 +69,7 @@ export function Other(props) {
         onChange={handleTextChange}
         className="other-text"
         placeholder="I think that..."
+        required
       />
       <div className="assigned-to-container">
         <label>Assigned to: </label>

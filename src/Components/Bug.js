@@ -83,6 +83,7 @@ export function Bug(props) {
         onChange={handleTextChange}
         className="bug-text"
         placeholder="I noticed that..."
+        required
       />
       <div className="bug-labels-container">
         <div className="severity-container">
