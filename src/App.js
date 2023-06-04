@@ -3,7 +3,7 @@ import { FeedbackModal } from "./Components/FeedbackModal";
 import "./App.css";
 
 function App() {
-  const [openFBModal, setOpenFBModal] = useState(false);
+  const [openFBModal, setOpenFBModal] = useState(true);
   function handleFBClick() {
     if (openFBModal) {
       setOpenFBModal(false);
@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <button onClick={handleFBClick}>Feedback</button>
-      {openFBModal ? <FeedbackModal /> : ""}
+      {openFBModal ? <FeedbackModal setOpenFBModal={setOpenFBModal} /> : ""}
     </div>
   );
 }
