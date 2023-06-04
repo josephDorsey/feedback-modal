@@ -26,6 +26,7 @@ export const FeedbackModal = (props) => {
       <Bug
         setOpenFBModal={props.setOpenFBModal}
         setBug={setBug}
+        bug={bug}
         setMainNav={setMainNav}
         setReceivedFeedback={setReceivedFeedback}
       />
@@ -35,6 +36,7 @@ export const FeedbackModal = (props) => {
     modalView = (
       <Idea
         setOpenFBModal={props.setOpenFBModal}
+        idea={idea}
         setIdea={setIdea}
         setMainNav={setMainNav}
         setReceivedFeedback={setReceivedFeedback}
