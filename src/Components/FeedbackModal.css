@@ -35,7 +35,8 @@
 }
 
 /* Bug */
-.bug-text {
+.bug-text,
+.idea-text {
   padding: 0.25rem;
   width: 15rem;
   height: 4rem;
@@ -43,14 +44,16 @@
   /* border: 2px solid blue; */
   border-radius: 5px;
 }
-.bug-nav-modal__title {
+.bug-nav-modal__title,
+.idea-nav-modal__title {
   display: flex;
   align-items: center;
   /* margin-left: 7rem; */
   /* margin-right: auto; */
   /* justify-content: center; */
 }
-.bug-nav-modal {
+.bug-nav-modal,
+.idea-nav-modal {
   display: flex;
   /* justify-content: space-around; */
   padding: 0.5rem;
