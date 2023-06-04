@@ -4,13 +4,13 @@ export function CloseFeedbackModal(props) {
     props.setOpenFBModal(false);
   };
   return (
-    <>
+    <div className={props.received ? "close-received" : ""}>
       <img
         src={closeButton}
         onClick={handleClick}
-        className={"ion-icon " + (props.received ? "close-received" : "")}
+        className="ion-icon"
         alt=""
       />
-    </>
+    </div>
   );
 }
