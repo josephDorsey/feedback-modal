@@ -20,7 +20,7 @@ export function MainNav(props) {
   };
   return (
     <>
-      <h3>What's on your mind?</h3>
+      <h3 className="feedback-title">What's on your mind?</h3>
       <div className="feedback-modal__options-container">
         <button onClick={handleBugClick} className="feedback-modal__button-box">
           <div>
