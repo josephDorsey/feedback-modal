@@ -1,5 +1,6 @@
 import bugIcon from "../assets/bug.svg";
 import ideaIcon from "../assets/bulb.svg";
+import otherIcon from "../assets/mail.svg";
 export function MainNav(props) {
   const handleBugClick = () => {
     props.setBug(true);
@@ -43,7 +44,7 @@ export function MainNav(props) {
           className="feedback-modal__button-box"
         >
           <div>
-            <img alt="" />
+            <img src={otherIcon} alt="" />
             <p>Other</p>
           </div>
         </button>
