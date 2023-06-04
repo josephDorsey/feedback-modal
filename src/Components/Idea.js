@@ -54,6 +54,7 @@ export function Idea(props) {
     <form onSubmit={handleSubmit}>
       <div className="idea-nav-modal">
         <ReturnToMainNav
+          idea={props.idea}
           setIdea={props.setIdea}
           setMainNav={props.setMainNav}
         />
