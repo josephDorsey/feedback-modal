@@ -24,7 +24,7 @@ export function Bug(props) {
     const webhookBody = {
       embeds: [
         {
-          title: "Ticket Type: Bug",
+          title: "Feedback Type: Bug 🪲",
           fields: [
             {
               name: "Issue",
