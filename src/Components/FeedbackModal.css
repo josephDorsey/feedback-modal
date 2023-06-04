@@ -79,3 +79,13 @@ label {
   border: 0;
   background-color: #3b5bdb;
 }
+.received-feedback-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: inherit;
+  gap: 1rem;
+}
+.close-received {
+  margin-left: auto;
+}
