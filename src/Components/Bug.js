@@ -6,6 +6,7 @@ import bugIcon from "../assets/bug.svg";
 export function Bug(props) {
   const [message, setMessage] = useState("");
   const [severity, setSeverity] = useState("Low");
+  const [user, setUser] = useState("");
   const handleSubmit = () => {
     console.log(`Clicked`);
   };
@@ -15,6 +16,9 @@ export function Bug(props) {
   };
   const handleSeverityChange = (e) => {
     setSeverity(e.target.value);
+  };
+  const handleUserChange = (e) => {
+    setUser(e.target.value);
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -43,7 +47,7 @@ export function Bug(props) {
         </div>
         <div className="assigned-to-container">
           <label>Assigned to: </label>
-          <input />
+          <input value={user} onChange={handleUserChange} />
         </div>
       </div>
       <SendFeedbackButton
