@@ -9,7 +9,6 @@ export const FeedbackModal = (props) => {
   const [other, setOther] = useState(false);
   const [mainNav, setMainNav] = useState(true);
   const [receivedFeedback, setReceivedFeedback] = useState(false);
-  const [isSubmit, setIsSubmit] = useState(false);
   let modalView;
   if (mainNav) {
     modalView = (
