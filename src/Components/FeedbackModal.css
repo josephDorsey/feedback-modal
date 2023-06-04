@@ -72,12 +72,16 @@ label {
 .send-feedback-button__container {
   padding: 0.5rem;
 }
-.send-feedback-button {
+.send-feedback-button,
+.add-another {
   padding: 0.5rem 1rem;
   border-radius: 25px;
   color: white;
   border: 0;
   background-color: #3b5bdb;
+}
+.add-another {
+  margin-bottom: 0.5rem;
 }
 .received-feedback-container {
   display: flex;

@@ -12,7 +12,9 @@ export function ReceivedFeedback(props) {
       />
       <img className="ion-icon" src={complete} alt="" />
       <h3>Thanks! We received your feedback.</h3>
-      <button onClick={handleClick}>Send Another?</button>
+      <button className="add-another" onClick={handleClick}>
+        Send Another?
+      </button>
     </div>
   );
 }
