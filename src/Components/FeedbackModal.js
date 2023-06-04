@@ -2,6 +2,7 @@ import { useState } from "react";
 import { MainNav } from "./MainNav";
 import { Bug } from "./Bug";
 import { Idea } from "./Idea";
+import { Other } from "./Other";
 import "./FeedbackModal.css";
 import { ReceivedFeedback } from "./ReceivedFeedback";
 export const FeedbackModal = (props) => {
@@ -38,6 +39,17 @@ export const FeedbackModal = (props) => {
         setOpenFBModal={props.setOpenFBModal}
         idea={idea}
         setIdea={setIdea}
+        setMainNav={setMainNav}
+        setReceivedFeedback={setReceivedFeedback}
+      />
+    );
+  }
+  if (other) {
+    modalView = (
+      <Other
+        setOpenFBModal={props.setOpenFBModal}
+        other={other}
+        setOther={setOther}
         setMainNav={setMainNav}
         setReceivedFeedback={setReceivedFeedback}
       />
