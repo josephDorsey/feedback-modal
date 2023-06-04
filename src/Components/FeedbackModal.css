@@ -34,8 +34,8 @@
   /* margin-right: auto; */
 }
 
-/* Bug */
 .bug-text,
+.other-text,
 .idea-text {
   padding: 0.25rem;
   width: 15rem;
@@ -45,6 +45,7 @@
   border-radius: 5px;
 }
 .bug-nav-modal__title,
+.other-nav-modal__title,
 .idea-nav-modal__title {
   display: flex;
   align-items: center;
@@ -52,8 +53,10 @@
   /* margin-right: auto; */
   /* justify-content: center; */
 }
+
 .bug-nav-modal,
-.idea-nav-modal {
+.idea-nav-modal,
+.other-nav-modal {
   display: flex;
   /* justify-content: space-around; */
   padding: 0.5rem;
