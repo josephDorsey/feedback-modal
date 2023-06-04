@@ -67,7 +67,11 @@ export function Bug(props) {
   return (
     <form onSubmit={handleSubmit}>
       <div className="bug-nav-modal">
-        <ReturnToMainNav setBug={props.setBug} setMainNav={props.setMainNav} />
+        <ReturnToMainNav
+          bug={props.bug}
+          setBug={props.setBug}
+          setMainNav={props.setMainNav}
+        />
         <div className="bug-nav-modal__title">
           <img src={bugIcon} className="ion-icon--smaller" alt="" />
           <h3>Report an issue</h3>
