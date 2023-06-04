@@ -3,7 +3,8 @@ import { FeedbackModal } from "./Components/FeedbackModal";
 import "./App.css";
 
 function App() {
-  const [openFBModal, setOpenFBModal] = useState(true);
+  // Set to true for testing
+  const [openFBModal, setOpenFBModal] = useState(false);
   function handleFBClick() {
     if (openFBModal) {
       setOpenFBModal(false);
