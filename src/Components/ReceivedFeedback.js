@@ -2,6 +2,7 @@ import { CloseFeedbackModal } from "./CloseFeedbackModal";
 import complete from "../assets/checkmark-circle.svg";
 export function ReceivedFeedback(props) {
   const handleClick = () => {
+    props.setReceivedFeedback(false);
     props.setMainNav(true);
   };
   return (
