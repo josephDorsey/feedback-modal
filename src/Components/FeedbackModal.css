@@ -45,6 +45,7 @@
 }
 .bug-nav-modal__title {
   display: flex;
+  align-items: center;
   /* margin-left: 7rem; */
   /* margin-right: auto; */
   /* justify-content: center; */
