@@ -32,7 +32,12 @@ export const FeedbackModal = (props) => {
     );
   }
   if (receivedFeedback) {
-    modalView = <ReceivedFeedback setMainNav={setMainNav} />;
+    modalView = (
+      <ReceivedFeedback
+        setOpenFBModal={props.setOpenFBModal}
+        setMainNav={setMainNav}
+      />
+    );
   }
   return (
     <div className="feedback-modal">
