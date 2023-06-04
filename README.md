@@ -1,15 +1,30 @@
 # Feedback Modal Component
 
+## The idea
+
+The idea behind this project was to create a feedback modal that will aid in my future projects. The goal was for it to push the tickets a personal `Discord` channel. I wanted a way for future clients/testers to update me with their bugs, ideas or anything for the app this is will be attached to.
+
 ## Build with?
 
 - React.js
 - Discord webhook url
 
-## The idea
+## The 3 navigation modals (Bug, Idea, Other)
 
-The idea behind this project was to create a feedback modal that will aid in my future projects.
-It includes a bug, idea, and other (tell me anything) modal. I wanted a way for future clients/testers to update me with their bugs, ideas or anything for the app this is will be attached to.
+### Bug
 
-## How to receive these tickets?
+This modal includes a:
 
-Each modal consists of a form that will be ported to my personal discord server. The form contents will create a body of text based on the content of the modal it is pushed from.
+- Textarea: This will allow users to type in a message about a bug they are experiencing
+- Severity filter: will allow users to select between low, medium, or high for the bug they are experiencing
+- Assigned to: allow users to add their user name to the ticket returns anonymous if empty
+
+### Idea
+
+- Textarea: This will allow users to type in a message about an idea they would like to share
+- Assigned to: allow users to add their user name to the ticket returns anonymous if empty
+
+### Other (tell me anything)
+
+- Textarea: This will allow users to type in a message they want to share with me
+- Assigned to: allow users to add their user name to the ticket returns anonymous if empty
