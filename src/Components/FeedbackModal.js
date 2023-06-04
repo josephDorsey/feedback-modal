@@ -65,9 +65,11 @@ export const FeedbackModal = (props) => {
     );
   }
   return (
-    <div className="feedback-modal">
-      {modalView}
-      {/* <Bug setBug={setBug} setMainScreen={setMainScreen} /> */}
+    <div className="overlay">
+      <div className="feedback-modal">
+        {modalView}
+        {/* <Bug setBug={setBug} setMainScreen={setMainScreen} /> */}
+      </div>
     </div>
   );
 };
