@@ -87,5 +87,6 @@ label {
   gap: 1rem;
 }
 .close-received {
-  margin-left: auto;
+  align-self: end;
+  margin: 0.5rem;
 }
