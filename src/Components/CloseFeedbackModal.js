@@ -8,7 +8,7 @@ export function CloseFeedbackModal(props) {
       <img
         src={closeButton}
         onClick={handleClick}
-        className="ion-icon"
+        className={"ion-icon " + (props.received ? "close-received" : "")}
         alt=""
       />
     </>
