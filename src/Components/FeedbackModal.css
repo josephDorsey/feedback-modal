@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   gap: 3rem;
+  padding-bottom: 1rem;
 }
 
 .feedback-modal__button-box {
@@ -93,4 +94,8 @@ label {
 .close-received {
   align-self: end;
   margin: 0.5rem;
+}
+
+.feedback-title {
+  padding: 1rem;
 }
