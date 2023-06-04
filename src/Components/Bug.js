@@ -31,7 +31,10 @@ export function Bug(props) {
           <input />
         </div>
       </div>
-      <SendFeedbackButton setReceivedFeedback={props.setReceivedFeedback} />
+      <SendFeedbackButton
+        setReceivedFeedback={props.setReceivedFeedback}
+        setBug={props.setBug}
+      />
     </form>
   );
 }
