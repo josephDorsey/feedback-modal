@@ -3,7 +3,7 @@ import backButton from "../assets/arrow-back.svg";
 import bugIcon from "../assets/bug.svg";
 import closeButton from "../assets/close.svg";
 import "./FeedbackModal.css";
-export const FeedbackModal = () => {
+export const FeedbackModal = (props) => {
   const [bug, setBug] = useState(false);
   const [idea, setIdea] = useState(false);
   const [other, setOther] = useState(false);
@@ -21,7 +21,13 @@ export const FeedbackModal = () => {
     );
   }
   if (bug) {
-    modalView = <Bug setBug={setBug} setMainScreen={setMainScreen} />;
+    modalView = (
+      <Bug
+        setOpenFBModal={props.setOpenFBModal}
+        setBug={setBug}
+        setMainScreen={setMainScreen}
+      />
+    );
   }
   return (
     <div className="feedback-modal">
@@ -100,12 +106,25 @@ function ReturnMainToScreen(props) {
     </>
   );
 }
+function CloseModal(props) {
+  const handleClick = () => {
+    props.setOpenFBModal(false);
+  };
+  return (
+    <>
+      <img
+        src={closeButton}
+        onClick={handleClick}
+        className="ion-icon"
+        alt=""
+      />
+    </>
+  );
+}
 function Bug(props) {
   const handleSubmit = () => {
     console.log(`Clicked`);
   };
-
-  const handleCloseModal = () => {};
   return (
     <form onSubmit={handleSubmit}>
       <div className="bug-nav-modal">
@@ -117,12 +136,7 @@ function Bug(props) {
           <img src={bugIcon} className="ion-icon--smaller" alt="" />
           <h3>Report an issue</h3>
         </div>
-        <img
-          src={closeButton}
-          onClick={handleCloseModal}
-          className="ion-icon"
-          alt=""
-        />
+        <CloseModal setOpenFBModal={props.setOpenFBModal} />
       </div>
       <textarea className="bug-text" placeholder="I noticed that..." />
       <div className="bug-labels-container">
