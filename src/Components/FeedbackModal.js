@@ -1,22 +1,23 @@
 import { useState } from "react";
-import backButton from "../assets/arrow-back.svg";
-import bugIcon from "../assets/bug.svg";
-import closeButton from "../assets/close.svg";
+import { MainNav } from "./MainNav";
+import { Bug } from "./Bug";
 import "./FeedbackModal.css";
+import { ReceivedFeedback } from "./ReceivedFeedback";
 export const FeedbackModal = (props) => {
   const [bug, setBug] = useState(false);
   const [idea, setIdea] = useState(false);
   const [other, setOther] = useState(false);
-  const [mainScreen, setMainScreen] = useState(true);
+  const [mainNav, setMainNav] = useState(true);
+  const [receivedFeedback, setReceivedFeedback] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
   let modalView;
-  if (mainScreen) {
+  if (mainNav) {
     modalView = (
-      <FeedbackModalMainPage
+      <MainNav
         setOther={setOther}
         setIdea={setIdea}
         setBug={setBug}
-        setMainScreen={setMainScreen}
+        setMainNav={setMainNav}
       />
     );
   }
@@ -25,9 +26,13 @@ export const FeedbackModal = (props) => {
       <Bug
         setOpenFBModal={props.setOpenFBModal}
         setBug={setBug}
-        setMainScreen={setMainScreen}
+        setMainNav={setMainNav}
+        setReceivedFeedback={setReceivedFeedback}
       />
     );
+  }
+  if (receivedFeedback) {
+    modalView = <ReceivedFeedback setMainNav={setMainNav} />;
   }
   return (
     <div className="feedback-modal">
@@ -36,137 +41,3 @@ export const FeedbackModal = (props) => {
     </div>
   );
 };
-
-function FeedbackModalMainPage(props) {
-  const handleBugClick = () => {
-    props.setBug(true);
-    props.setIdea(false);
-    props.setOther(false);
-    props.setMainScreen(false);
-  };
-  const handleIdeaClick = () => {
-    props.setBug(false);
-    props.setIdea(true);
-    props.setOther(false);
-    props.setMainScreen(false);
-  };
-  const handleOtherClick = () => {
-    props.setBug(false);
-    props.setIdea(false);
-    props.setOther(true);
-    props.setMainScreen(false);
-  };
-  return (
-    <>
-      <h3>What's on your mind?</h3>
-      <div className="feedback-modal__options-container">
-        <button onClick={handleBugClick} className="feedback-modal__button-box">
-          <div>
-            <img src={bugIcon} className="bug-icon" alt="" />
-            <p>Bug</p>
-          </div>
-        </button>
-        <button
-          onClick={handleIdeaClick}
-          className="feedback-modal__button-box"
-        >
-          <div>
-            <img alt="" />
-            <p>Idea</p>
-          </div>
-        </button>
-        <button
-          onClick={handleOtherClick}
-          className="feedback-modal__button-box"
-        >
-          <div>
-            <img alt="" />
-            <p>Other</p>
-          </div>
-        </button>
-      </div>
-    </>
-  );
-}
-function ReturnMainToScreen(props) {
-  const handleReturnMainScreen = () => {
-    props.setBug(false);
-    // props.setIdea(false);
-    // props.setOther(false);
-    props.setMainScreen(true);
-  };
-  return (
-    <>
-      <img
-        src={backButton}
-        onClick={handleReturnMainScreen}
-        className="ion-icon"
-        alt=""
-      />
-    </>
-  );
-}
-function CloseModal(props) {
-  const handleClick = () => {
-    props.setOpenFBModal(false);
-  };
-  return (
-    <>
-      <img
-        src={closeButton}
-        onClick={handleClick}
-        className="ion-icon"
-        alt=""
-      />
-    </>
-  );
-}
-function Bug(props) {
-  const handleSubmit = () => {
-    console.log(`Clicked`);
-  };
-  return (
-    <form onSubmit={handleSubmit}>
-      <div className="bug-nav-modal">
-        <ReturnMainToScreen
-          setBug={props.setBug}
-          setMainScreen={props.setMainScreen}
-        />
-        <div className="bug-nav-modal__title">
-          <img src={bugIcon} className="ion-icon--smaller" alt="" />
-          <h3>Report an issue</h3>
-        </div>
-        <CloseModal setOpenFBModal={props.setOpenFBModal} />
-      </div>
-      <textarea className="bug-text" placeholder="I noticed that..." />
-      <div className="bug-labels-container">
-        <div className="severity-container">
-          <label>Severity: </label>
-          <select>
-            <option>Low</option>
-            <option>Medium</option>
-            <option>High</option>
-          </select>
-        </div>
-        <div className="assigned-to-container">
-          <label>Assigned to: </label>
-          <input />
-        </div>
-      </div>
-      <SendFeedbackButton />
-    </form>
-  );
-}
-
-function SendFeedbackButton() {
-  const handleClick = (e) => {
-    e.preventDefault();
-  };
-  return (
-    <div className="send-feedback-button__container">
-      <button onClick={handleClick} className="send-feedback-button">
-        Send Feedback
-      </button>
-    </div>
-  );
-}
