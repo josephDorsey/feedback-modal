@@ -1,14 +1,18 @@
 import { CloseFeedbackModal } from "./CloseFeedbackModal";
+import complete from "../assets/checkmark-circle.svg";
 export function ReceivedFeedback(props) {
   const handleClick = () => {
-    props.setMainScreen(true);
+    props.setMainNav(true);
   };
   return (
-    <div>
-      <CloseFeedbackModal />
-      <img alt="" />
+    <div className="received-feedback-container">
+      <CloseFeedbackModal
+        received={true}
+        setOpenFBModal={props.setOpenFBModal}
+      />
+      <img className="ion-icon" src={complete} alt="" />
       <h3>Thanks! We received your feedback.</h3>
-      <button onClick={handleClick}>Send Another</button>
+      <button onClick={handleClick}>Send Another?</button>
     </div>
   );
 }
