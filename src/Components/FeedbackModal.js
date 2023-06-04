@@ -82,22 +82,36 @@ function FeedbackModalMainPage(props) {
     </>
   );
 }
+function ReturnMainToScreen(props) {
+  const handleReturnMainScreen = () => {
+    props.setBug(false);
+    // props.setIdea(false);
+    // props.setOther(false);
+    props.setMainScreen(true);
+  };
+  return (
+    <>
+      <img
+        src={backButton}
+        onClick={handleReturnMainScreen}
+        className="ion-icon"
+        alt=""
+      />
+    </>
+  );
+}
 function Bug(props) {
   const handleSubmit = () => {
     console.log(`Clicked`);
   };
-  const handleReturnMainScreen = () => {
-    props.setBug(false);
-    props.setMainScreen(true);
-  };
+
+  const handleCloseModal = () => {};
   return (
     <form onSubmit={handleSubmit}>
       <div className="bug-nav-modal">
-        <img
-          src={backButton}
-          onClick={handleReturnMainScreen}
-          className="ion-icon"
-          alt=""
+        <ReturnMainToScreen
+          setBug={props.setBug}
+          setMainScreen={props.setMainScreen}
         />
         <div className="bug-nav-modal__title">
           <img src={bugIcon} className="ion-icon--smaller" alt="" />
@@ -105,7 +119,7 @@ function Bug(props) {
         </div>
         <img
           src={closeButton}
-          // onClick={}
+          onClick={handleCloseModal}
           className="ion-icon"
           alt=""
         />
@@ -131,9 +145,14 @@ function Bug(props) {
 }
 
 function SendFeedbackButton() {
+  const handleClick = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="send-feedback-button__container">
-      <button className="send-feedback-button">Send Feedback</button>
+      <button onClick={handleClick} className="send-feedback-button">
+        Send Feedback
+      </button>
     </div>
   );
 }
