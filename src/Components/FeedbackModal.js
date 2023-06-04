@@ -1,13 +1,14 @@
 import { useState } from "react";
 import backButton from "../assets/arrow-back.svg";
 import bugIcon from "../assets/bug.svg";
+import closeButton from "../assets/close.svg";
 import "./FeedbackModal.css";
 export const FeedbackModal = () => {
   const [bug, setBug] = useState(false);
   const [idea, setIdea] = useState(false);
   const [other, setOther] = useState(false);
   const [mainScreen, setMainScreen] = useState(true);
-
+  const [isSubmit, setIsSubmit] = useState(false);
   let modalView;
   if (mainScreen) {
     modalView = (
@@ -55,7 +56,7 @@ function FeedbackModalMainPage(props) {
       <div className="feedback-modal__options-container">
         <button onClick={handleBugClick} className="feedback-modal__button-box">
           <div>
-            <img alt="" />
+            <img src={bugIcon} className="bug-icon" alt="" />
             <p>Bug</p>
           </div>
         </button>
@@ -95,27 +96,44 @@ function Bug(props) {
         <img
           src={backButton}
           onClick={handleReturnMainScreen}
-          className="back-button"
+          className="ion-icon"
           alt=""
         />
         <div className="bug-nav-modal__title">
-          <img src={bugIcon} className="ionicon--smaller" alt="" />
+          <img src={bugIcon} className="ion-icon--smaller" alt="" />
           <h3>Report an issue</h3>
         </div>
+        <img
+          src={closeButton}
+          // onClick={}
+          className="ion-icon"
+          alt=""
+        />
       </div>
-      <textarea />
-      <div>
-        <label>Severity: </label>
-        <select>
-          <option>Low</option>
-          <option>Medium</option>
-          <option>High</option>
-        </select>
+      <textarea className="bug-text" placeholder="I noticed that..." />
+      <div className="bug-labels-container">
+        <div className="severity-container">
+          <label>Severity: </label>
+          <select>
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+          </select>
+        </div>
+        <div className="assigned-to-container">
+          <label>Assigned to: </label>
+          <input />
+        </div>
       </div>
-      <div>
-        <label>Assigned to: </label>
-        <input />
-      </div>
+      <SendFeedbackButton />
     </form>
+  );
+}
+
+function SendFeedbackButton() {
+  return (
+    <div className="send-feedback-button__container">
+      <button className="send-feedback-button">Send Feedback</button>
+    </div>
   );
 }
