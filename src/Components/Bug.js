@@ -7,12 +7,19 @@ export function Bug(props) {
   const [message, setMessage] = useState("");
   const [severity, setSeverity] = useState("Low");
   const [user, setUser] = useState("");
-  const handleSubmit = () => {
-    console.log(`Clicked`);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const submitData = {
+      issue: message,
+      severity: severity,
+      userName: user,
+    };
+    console.log(submitData);
+    props.setReceivedFeedback(true);
+    props.setBug(false);
   };
   const handleTextChange = (e) => {
     setMessage(e.target.value);
-    console.log(e.target.value);
   };
   const handleSeverityChange = (e) => {
     setSeverity(e.target.value);
@@ -50,10 +57,13 @@ export function Bug(props) {
           <input value={user} onChange={handleUserChange} />
         </div>
       </div>
-      <SendFeedbackButton
+      <div className="send-feedback-button__container">
+        <button className="send-feedback-button">Send Feedback</button>
+      </div>
+      {/* <SendFeedbackButton
         setReceivedFeedback={props.setReceivedFeedback}
         setBug={props.setBug}
-      />
+      /> */}
     </form>
   );
 }
